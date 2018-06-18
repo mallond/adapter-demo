@@ -9,9 +9,9 @@ Process Step getJson>loadAdapter>doWork>listWork
 4. listWork:          Renders simple list of work
 
 How to run:
-node adapterPromiseChain.js adapter/requests/awsRequest.json
-node adapterPromiseChain.js adapter/requests/googleRequest.json
-node adapterPromiseChain.js adapter/requests/azureRequest.json
+node adapterPromiseChain.js awsRequest.json
+node adapterPromiseChain.js googleRequest.json
+node adapterPromiseChain.js azureRequest.json
  */
 
 const fs = require('fs');
