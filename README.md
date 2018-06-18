@@ -13,3 +13,6 @@ const result = getJson(fileName, promiseDataStructure)
         console.log(error);
     });
 ```
+
+#### Design Patterns
+[GOF Javascript](https://github.com/fbeline/Design-Patterns-JS)
