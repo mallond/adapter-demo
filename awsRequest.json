@@ -1,0 +1,7 @@
+{
+    "useAdapter":"aws",
+    "payload":{
+        "meta":{"from":"aws"},
+        "work":[{"item":1,"name":"aws 1"},{"item":2,"name":"aws 2"},{"item":3, "name":"aws 3"}]
+    }
+}
