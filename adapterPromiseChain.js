@@ -31,6 +31,7 @@ const PROMISE_DATA = {
     ADAPTER: 'adapter',
     WORKLIST: 'worklist'
 };
+const errorDataStructure = {ok:-1, messages:[]};
 
 /**
  * Inpute file name to load and return parsed data
@@ -42,7 +43,8 @@ const getJson = (fileName, promiseDataStructure) => {
     return new Promise((resolve, reject) => {
         fs.readFile(__dirname + `/${fileName}`, function (err, data) {
             if (err) {
-                reject(promiseDataStructure[PROMISE_DATA.ERROR] = {status: -1, error: err});
+                reject(promiseDataStructure[PROMISE_DATA.ERROR] = errorDataStructure.messages[0]=err);
+                return;
             }
             resolve(promiseDataStructure[PROMISE_DATA.DATA] = JSON.parse(data.toString()));
         });
@@ -67,7 +69,7 @@ const loadAdapter = (promiseDataStructure) => {
             promiseDataStructure[PROMISE_DATA.ADAPTER] = AZURE;
             resolve(promiseDataStructure);
         }
-        promiseDataStructure.ERROR = {ok: -1, message: 'Adaptor not found'};
+        promiseDataStructure.ERROR = errorDataStructure.messages[0]='Adapter Not found';
         reject(promiseDataStructure);
     });
 };
